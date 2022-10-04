@@ -22,7 +22,7 @@ const Sponsors = () => (
             <a href={'mailto:' + process.env.REACT_APP_DEVFEST_EMAIL} className='text-white bg-Green500 hover:text-white rounded-full text-md px-6 py-4 my-5'>Become a Sponsor</a>
             <a href={process.env.REACT_APP_CALL_FOR_SPONSORS} className='block font-semibold hover:text-Blue500 my-10'>Download Sponsor Packages</a>
         </div>
-        
+
     </div>
 </section>
 

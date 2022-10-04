@@ -1,5 +1,5 @@
 import React from 'react';
-import VenueImage from '../assets/temp-venue-placeholder.jpeg';
+import VenueImage from '../assets/DevFest-venue-NEU.png';
 
 const LocationSection = () => (
 
@@ -11,13 +11,13 @@ const LocationSection = () => (
                 </a>
             </div>
             <div className="mx-auto px-4 text-center">
-                <p className='text-xl lg:text-left lg:pt-0'>We're excited to announce that DevFest {process.env.REACT_APP_CHAPTER_NAME} will take place at <span className="font-semibold">SOME GREAT VENUE.</span></p>
-                
-                <a href="https://www.google.com/maps" className='hover:text-Blue500 lg:text-left'>
-                    <p className='text-lg'>VENUE<br />
-                   ADDRESS<br />
-                   ADDRESS<br />
-                   , YOUR STATE YOUR ZIP
+                <p className='text-xl lg:text-left lg:pt-0'>We're excited to announce that DevFest {process.env.REACT_APP_CHAPTER_NAME} will take place at <span className="font-semibold">Northeatern University.</span></p>
+
+                <a href="https://g.page/NortheasternVAN?share" className='hover:text-Blue500 lg:text-left'>
+                    <p className='text-lg'>Northeatern University - Vancouver<br />
+                   410 W Georgia St #1400<br />
+                   Vancouver, BC<br />
+                   V6B 1Z3
                     </p>
                 </a>
         </div>

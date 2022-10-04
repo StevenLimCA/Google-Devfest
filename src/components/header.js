@@ -4,9 +4,9 @@ import HamburgerMenu from './hamburger.js';
 import Navbar from './navbar.js';
 
 const Header = () => (
- 
+
     <header className="bg-Grey900 py-1 top-0 sticky z-10">
-    
+
         <nav className='flex justify-between items-center w-11/12 mx-auto py-3'>
             <div className='w-64'>
                 <a href="https://gdg.community.dev/">
@@ -17,7 +17,7 @@ const Header = () => (
                 <Navbar />
             </div>
             <div className='hidden lg:block'>
-                <a href="https://gdg.community.dev/" className="text-white bg-Red500 hover:bg-Red500 hover:text-white rounded-full text-md px-6 py-4 mx-2">Register</a>
+                <a href="https://www.eventbrite.ca/e/devfest-vancouver-2022-tech-talks-workshops-networking-tickets-425522668757" className="text-white bg-Red500 hover:bg-Red500 hover:text-white rounded-full text-md px-6 py-4 mx-2">Register</a>
             </div>
             <div className=''>
                 <HamburgerMenu />
@@ -28,4 +28,3 @@ const Header = () => (
 )
 
 export default Header;
-
