@@ -78,14 +78,14 @@ const Footer = () => (
               <FaLinkedin />
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href={process.env.REACT_APP_SOCIAL_MEETUP}
               aria-label="follow GDG {process.env.REACT_APP_CHAPTER_NAME} on Meetup"
             >
               <FaMeetup />
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div>
