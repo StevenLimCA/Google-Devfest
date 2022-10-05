@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGlobe, FaLinkedin, FaMeetup, FaTwitter } from "react-icons/fa";
+import { FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import gdg_logo from "../assets/gdg.png";
 
