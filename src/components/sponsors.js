@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import GoogleLogo from "../assets/sponsors/Google_2015_logo.png";
+import GoogleLogo from "../assets/sponsors/Google_2015_logo.png";
 
 const SponsorLogos = () => (
   <div className="text-center my-20">
     <h2>Sponsors</h2>
     <p>Thank you to our sponsors for their generous support.</p>
-    {/* 
     <section className="my-20">
       <h3 className="my-10 font-semibold">Platinum</h3>
       <div className="flex w-full h-full px-10 justify-center">
@@ -18,6 +17,30 @@ const SponsorLogos = () => (
       </div>
     </section>
 
+    <section className="my-20">
+      {" "}
+      <h3 className="my-10 font-semibold">Bronze</h3>
+      <div className="flex w-full h-full justify-center">
+        <a href="https://www.jukeboxprint.com/">
+          <img
+            src="./jukebox-wordmark.svg"
+            alt=" Jukebox Print"
+            className="object-contain h-18 w-full"
+          ></img>
+        </a>
+      </div>
+    </section>
+    {/* <section className="my-20">
+      <h3 className="my-10 font-semibold">Platinum</h3>
+      <div className="flex w-full h-full px-10 justify-center">
+        <img
+          src={GoogleLogo}
+          alt="Google Logo"
+          className="object-contain h-36 w-full"
+        ></img>
+      </div>
+    </section> */}
+    {/* 
     <section className="my-20">
       <h3 className="my-10 font-semibold">Gold</h3>
       <div className="flex w-full h-full justify-center">
