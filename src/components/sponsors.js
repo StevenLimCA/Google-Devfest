@@ -105,18 +105,25 @@ const SponsorLogos = () => (
     </section> */}
     <h2>Why Sponsor {process.env.REACT_APP_CHAPTER_NAME}?</h2>
     <p>
-      Technical Recruiting: {process.env.REACT_APP_CHAPTER_NAME} is a great
-      opportunity to meet emerging talent in the Vancouver tech industry.
+      <span className="font-semibold"> Technical Recruiting:</span>
+      {process.env.REACT_APP_CHAPTER_NAME} is a great opportunity to meet
+      emerging talent in the Vancouver technology industry.
     </p>
 
     <p>
-      Brand Recognition/Product Exposure: Expand your brand presence and expose
-      attendees, partners, and press to your company, product, or API.{" "}
+      <span className="font-semibold">
+        Brand Recognition/Product Exposure:{" "}
+      </span>{" "}
+      Your chance to spread your brand presence and expose attendees, partners,
+      and the press to your company, product, or API.
     </p>
 
     <p>
-      Support the Vancouver Tech Community: We are excited to be a part of the
-      growing tech community in Vancouver. Join us!{" "}
+      <span className="font-semibold">
+        Support the Vancouver Tech Community:{" "}
+      </span>
+      We are excited to be a part of the growing tech community in Vancouver.
+      Join us!
     </p>
     <div className="m-16">
       <Link
