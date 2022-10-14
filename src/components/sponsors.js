@@ -105,7 +105,7 @@ const SponsorLogos = () => (
     </section> */}
     <h2>Why Sponsor {process.env.REACT_APP_CHAPTER_NAME}?</h2>
     <p>
-      <span className="font-semibold"> Technical Recruiting:</span>
+      <span className="font-semibold"> Technical Recruiting:</span>{" "}
       {process.env.REACT_APP_CHAPTER_NAME} is a great opportunity to meet
       emerging talent in the Vancouver technology industry.
     </p>
