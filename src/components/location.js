@@ -13,7 +13,7 @@ const LocationSection = () => (
           ></img>
         </a>
       </div>
-      <div className="mx-auto px-4 text-center">
+      <div className="mx-auto px-4 text-center flex flex-col justify-around">
         <p className="text-xl lg:text-left lg:pt-0">
           We're super excited to announce that DevFest{" "}
           {process.env.REACT_APP_CHAPTER_NAME} will take place at{" "}
