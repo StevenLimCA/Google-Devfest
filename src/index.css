@@ -14,7 +14,6 @@
 @layer base {
   html {
     @apply text-Grey900;
-    height: 100%;
   }
   h1 {
     @apply text-4xl;
