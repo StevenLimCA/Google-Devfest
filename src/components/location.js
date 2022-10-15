@@ -9,7 +9,7 @@ const LocationSection = () => (
           <img
             src={VenueImage}
             className="rounded-2xl overflow-hidden"
-            alt="TBA"
+            alt={process.env.REACT_APP_LOCATION_NAME}
           ></img>
         </a>
       </div>
@@ -28,7 +28,8 @@ const LocationSection = () => (
           className="hover:text-Blue500 lg:text-left"
         >
           <p className="text-lg">
-            Address:
+            {" "}
+            <span className="font-semibold">Address:</span>
             <br />
             {process.env.REACT_APP_LOCATION_NAME} <br />
             410 W Georgia St #1400 Vancouver, BC V6B 1Z3
