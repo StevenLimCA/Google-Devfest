@@ -16,7 +16,18 @@ const SponsorLogos = () => (
         ></img>
       </div>
     </section>
-
+    <section className="my-20">
+      <h3 className="my-10 font-semibold">Gold</h3>
+      <div className="flex w-full h-full justify-center">
+        <a href="https://www.northeastern.edu">
+          <img
+            src="./NEU-logo.png"
+            alt="North Eastern University"
+            className="object-contain h-28 w-full"
+          ></img>
+        </a>
+      </div>
+    </section>
     <section className="my-20">
       {" "}
       <h3 className="my-10 font-semibold">Bronze</h3>
