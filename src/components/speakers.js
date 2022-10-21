@@ -3,6 +3,7 @@ import { FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
 import BioModal from "./modal";
 import axios from "axios";
 const { REACT_APP_SESSIONIZE_ID } = process.env;
+
 const SpeakerProfiles = () => {
   const [speakers, setSpeakers] = useState([]);
 
