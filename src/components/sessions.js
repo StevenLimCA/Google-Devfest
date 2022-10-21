@@ -18,12 +18,13 @@ export default function SessionSection() {
   }, []);
 
   return (
-    <section className=" mt-5 py-5">
+    <section>
       <img
         src="./schedule.jpg"
-        className="rounded-2xl overflow-hidden h-full mx-auto md:h-128 w-full"
+        className="rounded-2xl overflow-hidden h-full mx-auto md:h-96 w-full"
         alt="By Debby Hudson"
       ></img>
+      <h1 className="text-center">Schedule</h1>
       <h3 className="text-center text-Green500 font-semibold animate-pulse">
         Date: {process.env.REACT_APP_DEVFEST_DATE}
       </h3>
