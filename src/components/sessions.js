@@ -21,7 +21,7 @@ export default function SessionSection() {
     <section className=" mt-5 py-5">
       <img
         src="./schedule.jpg"
-        className="rounded-2xl overflow-hidden h-full mx-auto"
+        className="rounded-2xl overflow-hidden h-full mx-auto md:h-128 w-full"
         alt="By Debby Hudson"
       ></img>
       <h3 className="text-center text-Green500 font-semibold animate-pulse">
