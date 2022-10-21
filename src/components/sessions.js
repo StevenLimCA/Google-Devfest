@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 import SessionBox from "./sessionbox";
 import { v4 as uuidv4 } from "uuid";
 export default function SessionSection() {
-  const firstSessionsTime = "10:30";
+  const sessionTimes = ["10:30", "11:15", "12:00"];
   const [firstSessionsInfo, setFirstSessionInfo] = useState();
-  const secondSessionsTime = "11:15";
   const [secondSessionsInfo, setSecondSessionInfo] = useState();
-  const thirdSessionsTime = "12:00";
   const [thirdSessionsInfo, setThirdSessionInfo] = useState();
 
   useEffect(() => {
@@ -18,18 +16,18 @@ export default function SessionSection() {
       ).then((res) => {
         setFirstSessionInfo(
           res.data[0].sessions.filter(
-            (el) => el.startsAt.substring(11, 16) === firstSessionsTime
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[0]
           )
         );
 
         setSecondSessionInfo(
           res.data[0].sessions.filter(
-            (el) => el.startsAt.substring(11, 16) === secondSessionsTime
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[1]
           )
         );
         setThirdSessionInfo(
           res.data[0].sessions.filter(
-            (el) => el.startsAt.substring(11, 16) === thirdSessionsTime
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[2]
           )
         );
       });
@@ -49,7 +47,7 @@ export default function SessionSection() {
         Date: {process.env.REACT_APP_DEVFEST_DATE}
       </h3>
       <div className=" bg-slate-100 rounded-2xl p-5">
-        <h3> {firstSessionsTime} AM - 11:15 PM</h3>
+        <h3> {sessionTimes[0]} AM - 11:15 PM</h3>
         <div className="flex flex-wrap flex-col w-full px-10">
           {firstSessionsInfo
             ? firstSessionsInfo.map((el) => (
@@ -59,7 +57,7 @@ export default function SessionSection() {
         </div>
       </div>
       <div className="rounded-2xl p-5">
-        <h3> {secondSessionsTime} AM - 12:00 PM</h3>
+        <h3> {sessionTimes[1]} AM - 12:00 PM</h3>
         <div className="flex flex-wrap flex-col w-full px-10">
           {secondSessionsInfo
             ? secondSessionsInfo.map((el) => (
@@ -69,7 +67,7 @@ export default function SessionSection() {
         </div>{" "}
       </div>
       <div className=" bg-slate-100 rounded-2xl p-5">
-        <h3> {thirdSessionsTime} AM - 12:45 PM</h3>
+        <h3> {sessionTimes[2]} AM - 12:45 PM</h3>
         <div className="flex flex-wrap flex-col w-full bg-slate-100 px-10">
           {thirdSessionsInfo
             ? thirdSessionsInfo.map((el) => (
