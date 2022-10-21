@@ -1,21 +1,18 @@
 import React from "react";
 
 export default function SessionBox({ sessionInfo }) {
+  console.log(sessionInfo);
   return (
     <div>
-      <div className="my-5 lg:w-96 m-4">
+      <div className="my-3 ">
         {" "}
-        <div className="font-medium">{sessionInfo.title}</div>
-        <div className="flex flex-row justify-between">
-          <div className="my-1.5">
-            {sessionInfo.startsAt.substring(11, 16)} -{" "}
-            {sessionInfo.endsAt.substring(11, 16)}{" "}
-          </div>
-          <div>{" " + sessionInfo.room} </div>
-        </div>
+        <div className="font-bold">{" " + sessionInfo.room} </div>
+        <h4 className="font-medium">{sessionInfo.title}</h4>{" "}
+        <div className="flex flex-row justify-between my-1.5"></div>
         <div>
-          <span className="font-medium">DESCRIPTION: </span>
-          <div>{sessionInfo.description}</div>
+          <div className="my-2">{sessionInfo.description}</div>
+          <div className="font-medium">Speakers:</div>
+          <div>{sessionInfo.speakers.map((el) => el.name + " ")}</div>
         </div>
       </div>{" "}
     </div>
