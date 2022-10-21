@@ -3,7 +3,7 @@ import React from "react";
 export default function SessionBox({ sessionInfo }) {
   return (
     <div>
-      <div className="my-5 sm:w-96 m-4">
+      <div className="my-5 lg:w-96 m-4">
         {" "}
         <div className="font-medium">{sessionInfo.title}</div>
         <div className="flex flex-row justify-between">
