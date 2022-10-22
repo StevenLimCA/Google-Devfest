@@ -5,14 +5,10 @@ import Navbar from "./navbar.js";
 
 const Header = () => (
   <header className="bg-Grey900 py-1 top-0 sticky z-10">
-    <nav className="flex justify-between items-center w-11/12 mx-auto py-3">
+    <nav className="flex justify-between items-center w-11/12 mx-auto sm:py-3">
       <div className="w-64">
         <a href={process.env.REACT_APP_DEVFEST_REGISTRATION_URL}>
-          <img
-            src={logo}
-            className=" h-13 sm:h-20 p-4 sm:p-0"
-            alt="DevFest Logo"
-          />
+          <img src={logo} className=" h-13 sm:h-20 p-0" alt="DevFest Logo" />
         </a>
       </div>
       <div>
