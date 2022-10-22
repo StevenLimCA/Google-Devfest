@@ -12,12 +12,13 @@ export default function SessionSection() {
   const [fifthSessionsInfo, setFifthSessionInfo] = useState();
   const [sixthSessionsInfo, setSixthSessionInfo] = useState();
   //   const [seventhSessionsInfo, setSeventhSessionInfo] = useState();
-  const sessionStartTimes = [];
-  const sessionEndTimes = [];
+  //   const sessionStartTimes = [];
+  //   const sessionEndTimes = [];
 
   useEffect(() => {
     const { REACT_APP_SESSIONIZE_ID } = process.env;
-
+    const sessionStartTimes = [];
+    const sessionEndTimes = [];
     const fetchData = () => {
       axios(
         `https://sessionize.com/api/v2/${REACT_APP_SESSIONIZE_ID}/view/Sessions`
@@ -26,10 +27,11 @@ export default function SessionSection() {
           const startTimes = res.data[0].sessions[i].startsAt.substring(11, 16);
           const endTimes = res.data[0].sessions[i].endsAt.substring(11, 16);
           if (!sessionStartTimes.includes(startTimes)) {
-            sessionStartTimes.push(startTimes.toString());
-            sessionEndTimes.push(endTimes.toString());
+            sessionStartTimes.push(startTimes);
+            sessionEndTimes.push(endTimes);
           }
         }
+
         setSessionTimes(sessionStartTimes);
         setSessionCloseTimes(sessionEndTimes);
         setFirstSessionInfo(
@@ -71,7 +73,7 @@ export default function SessionSection() {
       });
     };
     fetchData();
-  }, []);
+  }, [sessionTimes]);
 
   return (
     <section>

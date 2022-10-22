@@ -32,7 +32,7 @@ const LocationSection = () => (
             <span className="font-semibold">Address:</span>
             <br />
             {process.env.REACT_APP_LOCATION_NAME} <br />
-            410 W Georgia St #1400 Vancouver, BC V6B 1Z3
+            {process.env.REACT_APP_LOCATION_ADDRESS}
           </p>
           <iframe
             src={`${process.env.REACT_APP_LOCATION_MAP_IFRAME}`}

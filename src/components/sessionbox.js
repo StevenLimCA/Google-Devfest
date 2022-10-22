@@ -5,8 +5,12 @@ export default function SessionBox({ sessionInfo }) {
     <div>
       <div className="my-3 ">
         {" "}
-        <div className="font-bold">{" " + sessionInfo.room} </div>
-        <h4 className="font-medium">{sessionInfo.title}</h4>{" "}
+        <div className="font-bold">
+          {" " + sessionInfo.room ? sessionInfo.room : "Loading..."}
+        </div>
+        <h4 className="font-medium">
+          {sessionInfo.title ? sessionInfo.title : "Loading..."}
+        </h4>{" "}
         <div className="flex flex-row justify-between my-1.5"></div>
         <div>
           <div className="my-2">{sessionInfo.description}</div>
