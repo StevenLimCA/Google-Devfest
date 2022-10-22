@@ -9,7 +9,7 @@ export default function SessionSection() {
   const [firstSessionsInfo, setFirstSessionInfo] = useState();
   const [secondSessionsInfo, setSecondSessionInfo] = useState();
   const [thirdSessionsInfo, setThirdSessionInfo] = useState();
-  console.log(sessionStartTimes[2].substring(0, 2));
+
   useEffect(() => {
     const { REACT_APP_SESSIONIZE_ID } = process.env;
     const fetchData = () => {
