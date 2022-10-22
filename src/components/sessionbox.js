@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function SessionBox({ sessionInfo }) {
-  console.log(sessionInfo);
   return (
     <div>
       <div className="my-3 ">
