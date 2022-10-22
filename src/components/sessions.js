@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import SessionBox from "./sessionbox";
 import { v4 as uuidv4 } from "uuid";
 export default function SessionSection() {
-  //   const AmOrFm = (el) =>  el.substring(0, 2) >= 12 ? "PM" : "AM"
   const [sessionTimes, setSessionTimes] = useState([]);
   const [sessionCloseTimes, setSessionCloseTimes] = useState([]);
   const [firstSessionsInfo, setFirstSessionInfo] = useState();
@@ -33,7 +32,6 @@ export default function SessionSection() {
         }
         setSessionTimes(sessionStartTimes);
         setSessionCloseTimes(sessionEndTimes);
-        console.log(res.data[0].sessions);
         setFirstSessionInfo(
           res.data[0].sessions.filter(
             (el) => el.startsAt.substring(11, 16) === sessionTimes[0]
