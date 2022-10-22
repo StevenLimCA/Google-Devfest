@@ -3,36 +3,73 @@ import { useEffect, useState } from "react";
 import SessionBox from "./sessionbox";
 import { v4 as uuidv4 } from "uuid";
 export default function SessionSection() {
-  const sessionStartTimes = ["10:30", "11:15", "12:00"];
-  const sessionEndTimes = ["11:15", "12:00", "12:45"];
-  const AmOrFm = (el) => (el.substring(0, 2) >= 12 ? "PM" : "AM");
+  //   const AmOrFm = (el) =>  el.substring(0, 2) >= 12 ? "PM" : "AM"
+  const [sessionTimes, setSessionTimes] = useState([]);
+  const [sessionCloseTimes, setSessionCloseTimes] = useState([]);
   const [firstSessionsInfo, setFirstSessionInfo] = useState();
   const [secondSessionsInfo, setSecondSessionInfo] = useState();
   const [thirdSessionsInfo, setThirdSessionInfo] = useState();
+  const [fourthSessionsInfo, setFourthSessionInfo] = useState();
+  const [fifthSessionsInfo, setFifthSessionInfo] = useState();
+  const [sixthSessionsInfo, setSixthSessionInfo] = useState();
+  //   const [seventhSessionsInfo, setSeventhSessionInfo] = useState();
+  const sessionStartTimes = [];
+  const sessionEndTimes = [];
 
   useEffect(() => {
     const { REACT_APP_SESSIONIZE_ID } = process.env;
-    const sessionStartTimes = ["10:30", "11:15", "12:00"];
+
     const fetchData = () => {
       axios(
         `https://sessionize.com/api/v2/${REACT_APP_SESSIONIZE_ID}/view/Sessions`
       ).then((res) => {
+        for (let i = 0; i < res.data[0].sessions.length; i++) {
+          const startTimes = res.data[0].sessions[i].startsAt.substring(11, 16);
+          const endTimes = res.data[0].sessions[i].endsAt.substring(11, 16);
+          if (!sessionStartTimes.includes(startTimes)) {
+            sessionStartTimes.push(startTimes.toString());
+            sessionEndTimes.push(endTimes.toString());
+          }
+        }
+        setSessionTimes(sessionStartTimes);
+        setSessionCloseTimes(sessionEndTimes);
+        console.log(res.data[0].sessions);
         setFirstSessionInfo(
           res.data[0].sessions.filter(
-            (el) => el.startsAt.substring(11, 16) === sessionStartTimes[0]
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[0]
           )
         );
 
         setSecondSessionInfo(
           res.data[0].sessions.filter(
-            (el) => el.startsAt.substring(11, 16) === sessionStartTimes[1]
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[1]
           )
         );
         setThirdSessionInfo(
           res.data[0].sessions.filter(
-            (el) => el.startsAt.substring(11, 16) === sessionStartTimes[2]
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[2]
           )
         );
+        setFourthSessionInfo(
+          res.data[0].sessions.filter(
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[3]
+          )
+        );
+        setFifthSessionInfo(
+          res.data[0].sessions.filter(
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[4]
+          )
+        );
+        setSixthSessionInfo(
+          res.data[0].sessions.filter(
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[5]
+          )
+        );
+        // setSeventhSessionInfo(
+        //   res.data[0].sessions.filter(
+        //     (el) => el.startsAt.substring(11, 16) === sessionTimes[6]
+        //   )
+        // );
       });
     };
     fetchData();
@@ -52,8 +89,7 @@ export default function SessionSection() {
       <div className=" bg-slate-100 rounded-2xl p-5">
         <h3>
           {" "}
-          {sessionStartTimes[0]} {AmOrFm(sessionStartTimes[0])} -{" "}
-          {sessionEndTimes[0]} {AmOrFm(sessionEndTimes[0])}
+          {sessionTimes[0]} - {sessionCloseTimes[0]}{" "}
         </h3>
         <div className="flex flex-wrap flex-col w-full px-10">
           {firstSessionsInfo
@@ -66,8 +102,7 @@ export default function SessionSection() {
       <div className="rounded-2xl p-5">
         <h3>
           {" "}
-          {sessionStartTimes[1]} {AmOrFm(sessionStartTimes[1])} -{" "}
-          {sessionEndTimes[1]} {AmOrFm(sessionEndTimes[1])}
+          {sessionTimes[1]} - {sessionCloseTimes[1]}{" "}
         </h3>
         <div className="flex flex-wrap flex-col w-full px-10">
           {secondSessionsInfo
@@ -80,8 +115,7 @@ export default function SessionSection() {
       <div className=" bg-slate-100 rounded-2xl p-5">
         <h3>
           {" "}
-          {sessionStartTimes[2]} {AmOrFm(sessionStartTimes[2])} -{" "}
-          {sessionEndTimes[2]} {AmOrFm(sessionEndTimes[2])}
+          {sessionTimes[2]} - {sessionCloseTimes[2]}{" "}
         </h3>
         <div className="flex flex-wrap flex-col w-full bg-slate-100 px-10">
           {thirdSessionsInfo
@@ -91,6 +125,61 @@ export default function SessionSection() {
             : "Loading..."}
         </div>
       </div>
+      <div className=" rounded-2xl p-5">
+        <h3>
+          {" "}
+          {sessionTimes[3]} - {sessionCloseTimes[3]}{" "}
+        </h3>
+        <div className="flex flex-wrap flex-col w-full px-10">
+          {fourthSessionsInfo
+            ? fourthSessionsInfo.map((el) => (
+                <SessionBox sessionInfo={el} key={uuidv4()} />
+              ))
+            : "Loading..."}
+        </div>
+      </div>{" "}
+      <div className=" rounded-2xl p-5 bg-slate-100">
+        <h3>
+          {" "}
+          {sessionTimes[4]} - {sessionCloseTimes[4]}{" "}
+        </h3>
+
+        <div className="flex flex-wrap flex-col w-full px-10">
+          {fifthSessionsInfo
+            ? fifthSessionsInfo.map((el) => (
+                <SessionBox sessionInfo={el} key={uuidv4()} />
+              ))
+            : "Loading..."}
+        </div>
+      </div>
+      <div className=" rounded-2xl p-5 ">
+        <h3>
+          {" "}
+          {sessionTimes[5]} - {sessionCloseTimes[5]}{" "}
+        </h3>
+
+        <div className="flex flex-wrap flex-col w-full px-10">
+          {sixthSessionsInfo
+            ? sixthSessionsInfo.map((el) => (
+                <SessionBox sessionInfo={el} key={uuidv4()} />
+              ))
+            : "Loading..."}
+        </div>
+      </div>
+      {/* <div className=" rounded-2xl p-5 ">
+        <h3>
+          {" "}
+          {sessionTimes[6]} - {sessionCloseTimes[6]}{" "}
+        </h3>
+
+        <div className="flex flex-wrap flex-col w-full px-10">
+          {seventhSessionsInfo
+            ? seventhSessionsInfo.map((el) => (
+                <SessionBox sessionInfo={el} key={uuidv4()} />
+              ))
+            : "Loading..."}
+        </div>
+      </div> */}
     </section>
   );
 }
