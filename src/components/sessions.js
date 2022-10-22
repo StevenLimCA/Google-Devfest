@@ -11,9 +11,7 @@ export default function SessionSection() {
   const [fourthSessionsInfo, setFourthSessionInfo] = useState();
   const [fifthSessionsInfo, setFifthSessionInfo] = useState();
   const [sixthSessionsInfo, setSixthSessionInfo] = useState();
-  //   const [seventhSessionsInfo, setSeventhSessionInfo] = useState();
-  //   const sessionStartTimes = [];
-  //   const sessionEndTimes = [];
+  const [seventhSessionsInfo, setSeventhSessionInfo] = useState();
 
   useEffect(() => {
     const { REACT_APP_SESSIONIZE_ID } = process.env;
@@ -65,11 +63,11 @@ export default function SessionSection() {
             (el) => el.startsAt.substring(11, 16) === sessionTimes[5]
           )
         );
-        // setSeventhSessionInfo(
-        //   res.data[0].sessions.filter(
-        //     (el) => el.startsAt.substring(11, 16) === sessionTimes[6]
-        //   )
-        // );
+        setSeventhSessionInfo(
+          res.data[0].sessions.filter(
+            (el) => el.startsAt.substring(11, 16) === sessionTimes[6]
+          )
+        );
       });
     };
     fetchData();
@@ -89,7 +87,9 @@ export default function SessionSection() {
       <div className=" bg-slate-100 rounded-2xl p-5">
         <h3>
           {" "}
-          {sessionTimes[0]} - {sessionCloseTimes[0]}{" "}
+          {sessionTimes[0]
+            ? sessionTimes[0] + " - " + sessionCloseTimes[0]
+            : ""}
         </h3>
         <div className="flex flex-wrap flex-col w-full px-10">
           {firstSessionsInfo
@@ -101,8 +101,9 @@ export default function SessionSection() {
       </div>
       <div className="rounded-2xl p-5">
         <h3>
-          {" "}
-          {sessionTimes[1]} - {sessionCloseTimes[1]}{" "}
+          {sessionTimes[1]
+            ? sessionTimes[1] + " - " + sessionCloseTimes[1]
+            : ""}
         </h3>
         <div className="flex flex-wrap flex-col w-full px-10">
           {secondSessionsInfo
@@ -114,8 +115,9 @@ export default function SessionSection() {
       </div>
       <div className=" bg-slate-100 rounded-2xl p-5">
         <h3>
-          {" "}
-          {sessionTimes[2]} - {sessionCloseTimes[2]}{" "}
+          {sessionTimes[2]
+            ? sessionTimes[2] + " - " + sessionCloseTimes[2]
+            : ""}
         </h3>
         <div className="flex flex-wrap flex-col w-full bg-slate-100 px-10">
           {thirdSessionsInfo
@@ -127,8 +129,9 @@ export default function SessionSection() {
       </div>
       <div className=" rounded-2xl p-5">
         <h3>
-          {" "}
-          {sessionTimes[3]} - {sessionCloseTimes[3]}{" "}
+          {sessionTimes[3]
+            ? sessionTimes[3] + " - " + sessionCloseTimes[3]
+            : ""}
         </h3>
         <div className="flex flex-wrap flex-col w-full px-10">
           {fourthSessionsInfo
@@ -140,8 +143,9 @@ export default function SessionSection() {
       </div>{" "}
       <div className=" rounded-2xl p-5 bg-slate-100">
         <h3>
-          {" "}
-          {sessionTimes[4]} - {sessionCloseTimes[4]}{" "}
+          {sessionTimes[4]
+            ? sessionTimes[4] + " - " + sessionCloseTimes[4]
+            : ""}
         </h3>
 
         <div className="flex flex-wrap flex-col w-full px-10">
@@ -155,7 +159,9 @@ export default function SessionSection() {
       <div className=" rounded-2xl p-5 ">
         <h3>
           {" "}
-          {sessionTimes[5]} - {sessionCloseTimes[5]}{" "}
+          {sessionTimes[5]
+            ? sessionTimes[5] + " - " + sessionCloseTimes[5]
+            : ""}
         </h3>
 
         <div className="flex flex-wrap flex-col w-full px-10">
@@ -166,10 +172,12 @@ export default function SessionSection() {
             : "Loading..."}
         </div>
       </div>
-      {/* <div className=" rounded-2xl p-5 ">
+      <div className=" rounded-2xl p-5 bg-slate-100">
         <h3>
           {" "}
-          {sessionTimes[6]} - {sessionCloseTimes[6]}{" "}
+          {sessionTimes[6]
+            ? sessionTimes[6] + " - " + sessionCloseTimes[6]
+            : ""}
         </h3>
 
         <div className="flex flex-wrap flex-col w-full px-10">
@@ -179,7 +187,7 @@ export default function SessionSection() {
               ))
             : "Loading..."}
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }
