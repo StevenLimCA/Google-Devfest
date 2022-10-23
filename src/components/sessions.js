@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import SessionBox from "./sessionbox";
-import { v4 as uuidv4 } from "uuid";
+import SessionInfo from "./sessioninfo";
+import SessionInfoWhite from "./sessioninfowhite";
 export default function SessionSection() {
   const [sessionTimes, setSessionTimes] = useState([]);
   const [sessionCloseTimes, setSessionCloseTimes] = useState([]);
@@ -84,110 +84,41 @@ export default function SessionSection() {
       <h3 className="text-center text-Green500 font-semibold animate-pulse">
         Date: {process.env.REACT_APP_DEVFEST_DATE}
       </h3>
-      <div className=" bg-slate-100 rounded-2xl p-5">
-        <h3>
-          {" "}
-          {sessionTimes[0]
-            ? sessionTimes[0] + " - " + sessionCloseTimes[0]
-            : ""}
-        </h3>
-        <div className="flex flex-wrap flex-col w-full px-10">
-          {firstSessionsInfo
-            ? firstSessionsInfo.map((el) => (
-                <SessionBox sessionInfo={el} key={uuidv4()} />
-              ))
-            : "Loading..."}
-        </div>
-      </div>
-      <div className="rounded-2xl p-5">
-        <h3>
-          {sessionTimes[1]
-            ? sessionTimes[1] + " - " + sessionCloseTimes[1]
-            : ""}
-        </h3>
-        <div className="flex flex-wrap flex-col w-full px-10">
-          {secondSessionsInfo
-            ? secondSessionsInfo.map((el) => (
-                <SessionBox sessionInfo={el} key={uuidv4()} />
-              ))
-            : "Loading..."}
-        </div>{" "}
-      </div>
-      <div className=" bg-slate-100 rounded-2xl p-5">
-        <h3>
-          {sessionTimes[2]
-            ? sessionTimes[2] + " - " + sessionCloseTimes[2]
-            : ""}
-        </h3>
-        <div className="flex flex-wrap flex-col w-full bg-slate-100 px-10">
-          {thirdSessionsInfo
-            ? thirdSessionsInfo.map((el) => (
-                <SessionBox sessionInfo={el} key={uuidv4()} />
-              ))
-            : "Loading..."}
-        </div>
-      </div>
-      <div className=" rounded-2xl p-5">
-        <h3>
-          {sessionTimes[3]
-            ? sessionTimes[3] + " - " + sessionCloseTimes[3]
-            : ""}
-        </h3>
-        <div className="flex flex-wrap flex-col w-full px-10">
-          {fourthSessionsInfo
-            ? fourthSessionsInfo.map((el) => (
-                <SessionBox sessionInfo={el} key={uuidv4()} />
-              ))
-            : "Loading..."}
-        </div>
-      </div>{" "}
-      <div className=" rounded-2xl p-5 bg-slate-100">
-        <h3>
-          {sessionTimes[4]
-            ? sessionTimes[4] + " - " + sessionCloseTimes[4]
-            : ""}
-        </h3>
-
-        <div className="flex flex-wrap flex-col w-full px-10">
-          {fifthSessionsInfo
-            ? fifthSessionsInfo.map((el) => (
-                <SessionBox sessionInfo={el} key={uuidv4()} />
-              ))
-            : "Loading..."}
-        </div>
-      </div>
-      <div className=" rounded-2xl p-5 ">
-        <h3>
-          {" "}
-          {sessionTimes[5]
-            ? sessionTimes[5] + " - " + sessionCloseTimes[5]
-            : ""}
-        </h3>
-
-        <div className="flex flex-wrap flex-col w-full px-10">
-          {sixthSessionsInfo
-            ? sixthSessionsInfo.map((el) => (
-                <SessionBox sessionInfo={el} key={uuidv4()} />
-              ))
-            : "Loading..."}
-        </div>
-      </div>
-      <div className=" rounded-2xl p-5 bg-slate-100">
-        <h3>
-          {" "}
-          {sessionTimes[6]
-            ? sessionTimes[6] + " - " + sessionCloseTimes[6]
-            : ""}
-        </h3>
-
-        <div className="flex flex-wrap flex-col w-full px-10">
-          {seventhSessionsInfo
-            ? seventhSessionsInfo.map((el) => (
-                <SessionBox sessionInfo={el} key={uuidv4()} />
-              ))
-            : "Loading..."}
-        </div>
-      </div>
+      <SessionInfo
+        sessionTimes={sessionTimes[0]}
+        sessionsInfo={firstSessionsInfo}
+        sessionCloseTimes={sessionCloseTimes[0]}
+      />
+      <SessionInfoWhite
+        sessionTimes={sessionTimes[1]}
+        sessionsInfo={secondSessionsInfo}
+        sessionCloseTimes={sessionCloseTimes[1]}
+      />
+      <SessionInfo
+        sessionTimes={sessionTimes[2]}
+        sessionsInfo={thirdSessionsInfo}
+        sessionCloseTimes={sessionCloseTimes[2]}
+      />
+      <SessionInfoWhite
+        sessionTimes={sessionTimes[3]}
+        sessionsInfo={fourthSessionsInfo}
+        sessionCloseTimes={sessionCloseTimes[3]}
+      />
+      <SessionInfo
+        sessionTimes={sessionTimes[4]}
+        sessionsInfo={fifthSessionsInfo}
+        sessionCloseTimes={sessionCloseTimes[4]}
+      />
+      <SessionInfoWhite
+        sessionTimes={sessionTimes[5]}
+        sessionsInfo={sixthSessionsInfo}
+        sessionCloseTimes={sessionCloseTimes[5]}
+      />
+      <SessionInfo
+        sessionTimes={sessionTimes[6]}
+        sessionsInfo={seventhSessionsInfo}
+        sessionCloseTimes={sessionCloseTimes[6]}
+      />
     </section>
   );
 }

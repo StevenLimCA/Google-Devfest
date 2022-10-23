@@ -17,7 +17,7 @@ export default function SessionBox({ sessionInfo }) {
           <div className="font-medium">Speakers:</div>
           <div>{sessionInfo.speakers.map((el) => el.name + " ")}</div>
         </div>
-      </div>{" "}
+      </div>
     </div>
   );
 }
