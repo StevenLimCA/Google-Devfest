@@ -13,9 +13,15 @@ export default function SessionBox({ sessionInfo }) {
         </h4>{" "}
         <div className="flex flex-row justify-between my-1.5"></div>
         <div>
-          <div className="my-2">{sessionInfo.description}</div>
-          <div className="font-medium">Speakers:</div>
-          <div>{sessionInfo.speakers.map((el) => el.name + " ")}</div>
+          <div className="my-1">{sessionInfo.description}</div>
+          {sessionInfo.speakers.length > 0 ? (
+            <>
+              <div className="font-medium">Speakers:</div>
+              <div>{sessionInfo.speakers.map((el) => el.name + " ")}</div>
+            </>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
