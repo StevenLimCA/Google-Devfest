@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 import { v4 as uuidv4 } from "uuid";
 import SessionInfo from "./sessioninfo";
 
@@ -50,16 +49,16 @@ export default function SessionSection() {
         <div>
           {sessionTimes
             ? sessionTimes.map((el, i) => (
-                <>
-                  <h3> {el + " - " + sessionCloseTimes[i]}</h3>
+                <div key={uuidv4()}>
+                  <h2> {el + " - " + sessionCloseTimes[i]}</h2>
                   <SessionInfo
+                    key={uuidv4()}
                     sessionInfo={allSessionsInfo.filter(
                       (el) => el.startsAt.substring(11, 16) === sessionTimes[i]
                     )}
                     SessionTime={el}
-                    key={uuidv4()}
-                  />{" "}
-                </>
+                  />
+                </div>
               ))
             : ""}
         </div>
