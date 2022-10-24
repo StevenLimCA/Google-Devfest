@@ -56,11 +56,10 @@ export default function SessionSection() {
                     sessionInfo={allSessionsInfo.filter(
                       (el) => el.startsAt.substring(11, 16) === sessionTimes[i]
                     )}
-                    SessionTime={el}
                   />
                 </div>
               ))
-            : ""}
+            : "Loading..."}
         </div>
       </div>
     </section>
