@@ -18,7 +18,7 @@ export default function SessionBox({ sessionInfo }) {
           )}
         </div>{" "}
         <div className=" text-sm uppercase text-slate-500">location</div>
-        <div className="text-md font-bold">
+        <div className="text-md">
           {" " + sessionInfo.room ? sessionInfo.room : "Loading..."}
         </div>
         <div className="flex flex-row justify-between my-1.5"></div>
