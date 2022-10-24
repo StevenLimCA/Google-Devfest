@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function SessionInfo({ sessionInfo }) {
   return (
-    <div className=" bg-slate-100 rounded-2xl p-5">
-      <div className="flex flex-wrap flex-col w-full px-10">
+    <div className="p-2">
+      <div className="flex flex-wrap flex-col w-full md:px-5">
         {sessionInfo
           ? sessionInfo.map((el) => (
               <SessionBox sessionInfo={el} key={uuidv4()} />

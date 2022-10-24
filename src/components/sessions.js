@@ -45,7 +45,7 @@ export default function SessionSection() {
         Date: {process.env.REACT_APP_DEVFEST_DATE}
       </h3>
 
-      <div className="rounded-2xl p-5">
+      <div className="rounded-2xl md:p-5">
         <div>
           {sessionTimes
             ? sessionTimes.map((el, i) => (
