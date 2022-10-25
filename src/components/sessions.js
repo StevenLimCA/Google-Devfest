@@ -6,28 +6,29 @@ import SessionInfo from "./sessioninfo";
 export default function SessionSection() {
   const [sessionTimes, setSessionTimes] = useState([]);
   const [sessionCloseTimes, setSessionCloseTimes] = useState([]);
-  const [allSessionsInfo, setAllSessionsInfo] = useState();
+  const [allSessionsInfo, setAllSessionsInfo] = useState(); // Object Array
 
   useEffect(() => {
-    const { REACT_APP_SESSIONIZE_ID } = process.env;
-    const sessionStartTimes = [];
-    const sessionEndTimes = [];
+    const { REACT_APP_SESSIONIZE_ID } = process.env; //string
+    const sessionStartTimes = []; // hh:mm string array
+    const sessionEndTimes = []; // hh:mm string array
     const fetchData = () => {
       axios(
         `https://sessionize.com/api/v2/${REACT_APP_SESSIONIZE_ID}/view/Sessions`
       ).then((res) => {
-        for (let i = 0; i < res.data[0].sessions.length; i++) {
-          const startTimes = res.data[0].sessions[i].startsAt.substring(11, 16);
-          const endTimes = res.data[0].sessions[i].endsAt.substring(11, 16);
+        const results = res.data[0]; //expected value: Object
+        for (let i = 0; i < results.sessions.length; i++) {
+          const startTimes = results.sessions[i].startsAt.substring(11, 16);
+          const endTimes = results.sessions[i].endsAt.substring(11, 16);
           if (!sessionStartTimes.includes(startTimes)) {
-            sessionStartTimes.push(startTimes);
-            sessionEndTimes.push(endTimes);
+            // if not exist,
+            sessionStartTimes.push(startTimes); // add to sessionStart array
+            sessionEndTimes.push(endTimes); // add to sessionEnd array
           }
         }
-
         setSessionTimes(sessionStartTimes);
         setSessionCloseTimes(sessionEndTimes);
-        setAllSessionsInfo(res.data[0].sessions);
+        setAllSessionsInfo(results.sessions);
       });
     };
     fetchData();

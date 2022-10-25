@@ -1,13 +1,22 @@
 import React from "react";
 import SponsorLogos from "../components/sponsors.js";
-
+import SponsorPDF from "../assets/Sponsorship-Support-GDG.pdf";
 const Sponsors = () => (
   <section>
     <SponsorLogos />
     <div className="w-11/12 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2">
       <div className="px-5 my-5">
         <div className="aspect-w-16 aspect-h-9">
-          <iframe
+          <embed
+            src={SponsorPDF}
+            width="100%"
+            height="596"
+            allowFullScreen={true}
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            title={`DevFest Sponsor Packages - GDG ${process.env.REACT_APP_CHAPTER_NAME}`}
+          ></embed>
+          {/* <iframe
             src="https://docs.google.com/presentation/d/e/2PACX-1vQqhwzM5un7HK-9ZAQ3-3J9ofd1tlquvzz7fkVWpiehdelDEgln037DUlUlLKThYkTBDGXvhmxnm5Ru/embed?start=false&loop=false&delayms=3000"
             frameBorder="0"
             width="960"
@@ -16,7 +25,7 @@ const Sponsors = () => (
             mozallowfullscreen="true"
             webkitallowfullscreen="true"
             title="DevFest Sponsor Packages - GDG {process.env.REACT_APP_CHAPTER_NAME}"
-          ></iframe>
+          ></iframe> */}
         </div>
       </div>
       <div className="px-5 my-5">
