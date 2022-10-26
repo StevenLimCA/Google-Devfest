@@ -16,7 +16,7 @@ const Volunteer = () => (
       motivated team to manage the event, find sponsorships, develop the
       website, take the initiatives, and coordinate the procurement of speakers,
       food and the community, DevFest 2022 would not have been possible. So
-      please give them a huge round of applause! And remember to consider them
+      please give them a huge round of applause and remember to consider them
       for your future tech projects!
     </p>
     <div className="grid grid-cols-1 lg:grid-cols-3 px-5">
