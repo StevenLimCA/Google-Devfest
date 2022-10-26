@@ -3,14 +3,16 @@
     "name": "Pulkit Bhamai",
     "title": "Content Marketer",
     "desc": "DevFest, for me, is more than a tech fest where people not only find out the power of emerging technologies but also get a chance to connect with like-minded people and get insights on career development",
-    "img": "1625409917783.jpeg",
-    "linkedin": ""
+    "img": "./1625409917783.jpeg",
+    "linkedin": "https://www.linkedin.com/in/pulkit-bhamai/",
+    "website": ""
   },
   {
     "name": "Steven Lim",
     "title": "Web Developer",
-    "desc": "I joined Devfest because I am excited to be part of the ever-evolving tech world! And It is where Developers share their experience so that we can learn and build the best version of ourselves and commit it to Git.",
-    "img": "",
-    "linkedin": ""
+    "desc": "I joined Devfest because I am excited to be part of the ever-evolving tech world! And It is where Developers share their experience so that we can learn and build the best version of ourselves and Git commit.  ",
+    "img": "./1516995188290.jpeg",
+    "linkedin": "https://www.linkedin.com/in/steven-lim-ca/",
+    "website": "https://stevenlim.ca"
   }
 ]
