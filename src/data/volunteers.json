@@ -14,5 +14,21 @@
     "img": "./1516995188290.jpeg",
     "linkedin": "https://www.linkedin.com/in/steven-lim-ca/",
     "website": "https://stevenlim.ca"
+  },
+  {
+    "name": "Procheta Nag",
+    "title": "Organizer of GDG Vancouver, UX/Product Designer",
+    "desc": "It feels like a family reunion with similiar minded poeple coming together to learn, connect and share. ",
+    "img": "",
+    "linkedin": "https://www.linkedin.com/in/procheta/",
+    "website": ""
+  },
+  {
+    "name": "Shubhra Sarker",
+    "title": "Software Engineer",
+    "desc": "",
+    "img": "",
+    "linkedin": "https://www.linkedin.com/in/ishubhra/",
+    "website": ""
   }
 ]
