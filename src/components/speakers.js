@@ -12,6 +12,7 @@ const SpeakerProfiles = () => {
       `https://sessionize.com/api/v2/${REACT_APP_SESSIONIZE_ID}/view/Speakers`
     )
       .then((response) => {
+        console.log(response);
         return response.data;
       })
       .then((data) => {
